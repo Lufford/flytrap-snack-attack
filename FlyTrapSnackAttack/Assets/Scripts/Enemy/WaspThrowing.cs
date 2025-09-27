@@ -6,9 +6,6 @@ using UnityEngine.InputSystem.Controls;
 
 public class WaspThrowing : MonoBehaviour
 {
-    void Start()
-    {
-    }
 
     //placeholder until I think of better movement
     void Update()
@@ -22,5 +19,6 @@ public class WaspThrowing : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
     }
 }

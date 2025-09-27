@@ -8,6 +8,8 @@ public class SpearThrown : MonoBehaviour
     private Vector2 moveDirection;
 
     [SerializeField] private float speed;
+
+    public float damageAmount = 20f;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -29,6 +31,17 @@ public class SpearThrown : MonoBehaviour
         //destroy itself if it touches "table" tag
         if (other.gameObject.CompareTag("Table"))
         {
+            Destroy(gameObject);
+        }
+
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Energy energy = FindFirstObjectByType<Energy>();
+            if (energy != null)
+            {
+                energy.Damage(damageAmount);
+            }
+
             Destroy(gameObject);
         }
     }
