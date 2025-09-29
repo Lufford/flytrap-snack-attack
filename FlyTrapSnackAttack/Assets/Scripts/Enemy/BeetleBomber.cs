@@ -17,7 +17,7 @@ public class BeetleBomber : MonoBehaviour
     void Start()
     {
         bombNum = 1; //only one bomb can be dropped
-        trackCooldown = Random.Range(2f, 5f); //random cooldown between 2 and 5 seconds
+        trackCooldown = Random.Range(2f, 15f); //random cooldown between 2 and 5 seconds
     }
 
     // Update is called once per frame

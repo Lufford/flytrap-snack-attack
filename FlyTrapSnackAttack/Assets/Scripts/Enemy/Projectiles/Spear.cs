@@ -21,7 +21,7 @@ public class Spear : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").transform;
         //chooses random int between 3-5, 1-2
         trackCooldown = Random.Range(3, 6);
-        numSpears = Random.Range(1,3);
+        numSpears = Random.Range(1,4);
     }
 
     private void Update()

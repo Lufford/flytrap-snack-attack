@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3114646183823701189}
   - component: {fileID: 3589842157788195732}
   - component: {fileID: 6226138078812015053}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpearThrown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,4 +175,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43c0c3e37720492439c4e9887d33a7e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 6
+  damageAmount: 20
