@@ -4,6 +4,7 @@ public class PoisonZoneEffects : MonoBehaviour
 {
 
     private float duration;
+    public float damageAmount = 10f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,6 +23,19 @@ public class PoisonZoneEffects : MonoBehaviour
 
     }
 
-    //I dont know if the poison would need to hurt player here or in player script
-    // Add poison damage here if needed
+   
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Energy energy = FindFirstObjectByType<Energy>();
+            if (energy != null)
+            {
+                energy.Damage(damageAmount);
+            }
+
+            
+        }
+    }
 }

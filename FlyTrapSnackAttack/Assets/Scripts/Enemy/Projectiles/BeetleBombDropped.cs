@@ -35,6 +35,8 @@ public class BeetleBombDropped : MonoBehaviour
 
             //destroy after bomb is instantiated
             Destroy(gameObject);
+
+            
         }
     }
 }
