@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Fly : MonoBehaviour
@@ -6,5 +7,18 @@ public class Fly : MonoBehaviour
     void Start()
     {
         Destroy(gameObject, 5f);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Tongue"))
+        {
+            Destroy(gameObject);
+            Energy energy = FindFirstObjectByType<Energy>();
+            if (energy != null)
+            {
+                energy.Heal(4);
+            }
+        }
     }
 }

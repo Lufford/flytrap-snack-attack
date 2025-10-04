@@ -11,6 +11,8 @@ TagManager:
   - RightZone
   - LeftZone
   - Fly
+  - Tongue
+  - Mouth
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - Enemy
   - Player
   - Fly
-  - 
+  - Bomb
   - 
   - 
   - 

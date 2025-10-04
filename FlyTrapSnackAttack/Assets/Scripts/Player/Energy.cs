@@ -57,7 +57,7 @@ public class Energy : MonoBehaviour
     //Activate Game Over
     private void GameOver()
     {
-        GameManager.Instance.SetEndGame();
+        GameManager.Instance.SetGameOver();
         SceneManager.LoadScene("GameOverScreen");
     }
 }

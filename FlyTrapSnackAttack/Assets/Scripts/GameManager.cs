@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void SetEndGame()
+    public void SetGameOver()
     {
         gameOver = true;
     }
