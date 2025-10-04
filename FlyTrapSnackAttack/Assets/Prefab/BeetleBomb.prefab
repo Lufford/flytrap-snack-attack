@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2686553859654573170}
   - component: {fileID: 5846029012515282134}
   - component: {fileID: 8370008367418528310}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: BeetleBomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1,7 +1,11 @@
 using System;
 using System.Collections;
+using TMPro;
+using Unity.UI;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
@@ -29,6 +33,11 @@ public class GameManager : MonoBehaviour
     //spawn location
     [SerializeField] private Transform[] spawnLocations;
 
+    //Scoreboard
+    [SerializeField] private GameObject scoreboard;
+
+    [SerializeField] private int score = 0;
+
     private float spawnCooldown = 3f;
     private float spawnTimer = 0;
     private float[] spawnTimes =  {3f,10f,12f};
@@ -37,7 +46,7 @@ public class GameManager : MonoBehaviour
     private float flySpawnTimer = 0;
     private void Start()
     {
-
+        StartCoroutine(FindScoreBoard());
     }
 
     private void Update()
@@ -57,12 +66,26 @@ public class GameManager : MonoBehaviour
             SpawnFly();
             flySpawnTimer = 0f;
         }
-        
     }
 
     public void SetGameOver()
     {
         gameOver = true;
+        SceneManager.LoadScene("GameOverScreen");
+        StartCoroutine(FindScoreBoard());
+    }
+
+    public void startGame()
+    {
+        gameOver = false;
+        score = 0;
+        StartCoroutine(FindScoreBoard());
+    }
+
+    public void updateScore(int score)
+    {
+        this.score += score;
+        scoreboard.GetComponent<TMP_Text>().text = "Score: " + this.score.ToString();
     }
 
     void SpawnEnemy(GameObject prefab)
@@ -73,5 +96,15 @@ public class GameManager : MonoBehaviour
     void SpawnFly()
     {
         Instantiate(flyPrefabs, new Vector3(Random.Range(-8,8),5.7f,0), Quaternion.identity);
+    }
+
+    private IEnumerator FindScoreBoard()
+    {
+        yield return new WaitForSeconds(0.1f);
+        scoreboard = GameObject.FindGameObjectWithTag("Scoreboard");
+        if (gameOver)
+        {
+            scoreboard.GetComponent<TMP_Text>().text = "Final Score " + score.ToString();
+        }
     }
 }

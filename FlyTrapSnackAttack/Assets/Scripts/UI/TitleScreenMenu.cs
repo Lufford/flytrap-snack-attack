@@ -6,12 +6,17 @@ public class TitleScreenMenu : MonoBehaviour
     //Send to Game
     public void StartGame()
     {
+        GameManager.Instance.startGame();
         SceneManager.LoadScene("FirstLevel");
     }
 
     //Exit Game
     public void QuitGame()
     {
-        Application.Quit();
+        #if !UNITY_EDITOR
+            Application.Quit();
+        #elif UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #endif
     }
 }

@@ -13,6 +13,7 @@ TagManager:
   - Fly
   - Tongue
   - Mouth
+  - Scoreboard
   layers:
   - Default
   - TransparentFX
