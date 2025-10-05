@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,7 +24,30 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        SceneManager.sceneLoaded += onSceneLoad;
     }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= onSceneLoad;
+    }
+
+    void onSceneLoad(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log(scene.name);
+        Debug.Log(mode.ToString());
+        spawnLocations = GameObject.FindGameObjectsWithTag("SpawnLocation");
+        if (scene.name.Equals("TitleScreen") || scene.name.Equals("GameOverScreen"))
+        {
+            gameOver = true;
+        }
+        else
+        {
+            gameOver = false;
+        }
+    }
+    
 
     //enemy prefabs
     [SerializeField] private GameObject[] enemyPrefabs;
@@ -31,7 +55,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject flyPrefabs;
 
     //spawn location
-    [SerializeField] private Transform[] spawnLocations;
+    private GameObject[] spawnLocations;
+ 
 
     //Scoreboard
     [SerializeField] private GameObject scoreboard;
@@ -41,7 +66,7 @@ public class GameManager : MonoBehaviour
     private float spawnCooldown = 3f;
     private float spawnTimer = 0;
     private float[] spawnTimes =  {3f,10f,12f};
-    private bool gameOver = false;
+    private bool gameOver = true;
     private float flySpawnCooldown = 1f;
     private float flySpawnTimer = 0;
     private void Start()
@@ -90,7 +115,7 @@ public class GameManager : MonoBehaviour
 
     void SpawnEnemy(GameObject prefab)
     {
-        Instantiate(prefab, spawnLocations[Random.Range(0, spawnLocations.Length)].position, Quaternion.identity);
+        Instantiate(prefab, spawnLocations[Random.Range(0, spawnLocations.Length)].transform.position, Quaternion.identity);
     }
 
     void SpawnFly()
