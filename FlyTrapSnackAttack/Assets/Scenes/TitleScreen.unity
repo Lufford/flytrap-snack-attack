@@ -252,11 +252,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 135285439}
   m_CullTransparentMesh: 1
-<<<<<<< Updated upstream
 --- !u!1 &562781175
-=======
---- !u!1 &633574366
->>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -264,24 +260,16 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< Updated upstream
   - component: {fileID: 562781176}
   - component: {fileID: 562781178}
   - component: {fileID: 562781177}
   m_Layer: 5
   m_Name: Text (TMP)
-=======
-  - component: {fileID: 633574368}
-  - component: {fileID: 633574367}
-  m_Layer: 0
-  m_Name: GameManager
->>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< Updated upstream
 --- !u!224 &562781176
 RectTransform:
   m_ObjectHideFlags: 0
@@ -302,15 +290,11 @@ RectTransform:
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &562781177
-=======
---- !u!114 &633574367
->>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_GameObject: {fileID: 562781175}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -398,38 +382,12 @@ MonoBehaviour:
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &562781178
 CanvasRenderer:
-=======
-  m_GameObject: {fileID: 633574366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1c081b9154eb8248b78775214f272ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPrefabs:
-  - {fileID: 3964386992224320896, guid: b5a577d85a9637640948d0dd2bee7953, type: 3}
-  - {fileID: 7716922759546360452, guid: 0969d3130575fc048bbea1dadb543d03, type: 3}
-  flyPrefabs: {fileID: 7624687407460526772, guid: d7f1b40d1ae969c4782d137a93c88eb6, type: 3}
---- !u!4 &633574368
-Transform:
->>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   m_GameObject: {fileID: 562781175}
   m_CullTransparentMesh: 1
-=======
-  m_GameObject: {fileID: 633574366}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4647418, y: -3.0507336, z: 0.048987452}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> Stashed changes
 --- !u!1 &737970948
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,6 +654,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 757313221}
   m_CullTransparentMesh: 1
+--- !u!1 &809117417
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 809117419}
+  - component: {fileID: 809117418}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &809117418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809117417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1c081b9154eb8248b78775214f272ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 3964386992224320896, guid: b5a577d85a9637640948d0dd2bee7953, type: 3}
+  - {fileID: 7716922759546360452, guid: 0969d3130575fc048bbea1dadb543d03, type: 3}
+  flyPrefabs: {fileID: 7624687407460526772, guid: d7f1b40d1ae969c4782d137a93c88eb6, type: 3}
+  scoreboard: {fileID: 0}
+  score: 0
+--- !u!4 &809117419
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809117417}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.4954226, y: 0.59114397, z: -0.005272746}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &839404988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1921,4 +1929,4 @@ SceneRoots:
   - {fileID: 1448699422}
   - {fileID: 1964599278}
   - {fileID: 1482753125}
-  - {fileID: 633574368}
+  - {fileID: 809117419}

@@ -7,7 +7,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,10 +23,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
         SceneManager.sceneLoaded += onSceneLoad;
     }
-
     private void OnDestroy()
     {
         SceneManager.sceneLoaded -= onSceneLoad;
@@ -47,7 +44,7 @@ public class GameManager : MonoBehaviour
             gameOver = false;
         }
     }
-    
+
 
     //enemy prefabs
     [SerializeField] private GameObject[] enemyPrefabs;
@@ -56,7 +53,6 @@ public class GameManager : MonoBehaviour
 
     //spawn location
     private GameObject[] spawnLocations;
- 
 
     //Scoreboard
     [SerializeField] private GameObject scoreboard;
@@ -66,7 +62,7 @@ public class GameManager : MonoBehaviour
     private float spawnCooldown = 3f;
     private float spawnTimer = 0;
     private float[] spawnTimes =  {3f,10f,12f};
-    private bool gameOver = true;
+    private bool gameOver = false;
     private float flySpawnCooldown = 1f;
     private float flySpawnTimer = 0;
     private void Start()

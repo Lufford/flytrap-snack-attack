@@ -499,14 +499,8 @@ MonoBehaviour:
   - {fileID: 3964386992224320896, guid: b5a577d85a9637640948d0dd2bee7953, type: 3}
   - {fileID: 7716922759546360452, guid: 0969d3130575fc048bbea1dadb543d03, type: 3}
   flyPrefabs: {fileID: 7624687407460526772, guid: d7f1b40d1ae969c4782d137a93c88eb6, type: 3}
-<<<<<<< Updated upstream
-  spawnLocations:
-  - {fileID: 777720179}
-  - {fileID: 24059095}
   scoreboard: {fileID: 0}
   score: 0
-=======
->>>>>>> Stashed changes
 --- !u!4 &263391486
 Transform:
   m_ObjectHideFlags: 0
