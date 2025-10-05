@@ -499,7 +499,6 @@ MonoBehaviour:
   - {fileID: 3964386992224320896, guid: b5a577d85a9637640948d0dd2bee7953, type: 3}
   - {fileID: 7716922759546360452, guid: 0969d3130575fc048bbea1dadb543d03, type: 3}
   flyPrefabs: {fileID: 7624687407460526772, guid: d7f1b40d1ae969c4782d137a93c88eb6, type: 3}
-  scoreboard: {fileID: 0}
   score: 0
 --- !u!4 &263391486
 Transform:
@@ -1307,11 +1306,11 @@ RectTransform:
   - {fileID: 925501550}
   m_Father: {fileID: 1046060101}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -1470, y: 0}
   m_SizeDelta: {x: 450, y: 38}
-  m_Pivot: {x: 0, y: 0}
+  m_Pivot: {x: 1, y: 0}
 --- !u!114 &1273499117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1656,9 +1655,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1046060101}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 820, y: -500}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -100, y: 25}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1460852766
