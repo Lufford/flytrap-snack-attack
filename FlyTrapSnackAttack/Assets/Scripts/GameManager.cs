@@ -1,8 +1,5 @@
-using System;
 using System.Collections;
 using TMPro;
-using Unity.UI;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -55,7 +52,7 @@ public class GameManager : MonoBehaviour
     private GameObject[] spawnLocations;
 
     //Scoreboard
-    [SerializeField] private GameObject scoreboard;
+    private GameObject scoreboard;
 
     [SerializeField] private int score = 0;
 
@@ -67,7 +64,7 @@ public class GameManager : MonoBehaviour
     private float flySpawnTimer = 0;
     private void Start()
     {
-        StartCoroutine(FindScoreBoard());
+        
     }
 
     private void Update()
