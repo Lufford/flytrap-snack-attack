@@ -3,17 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags:
-  - Table
-  - WaspThrowing
-  - PoisonZone
-  - SideZone
-  - RightZone
-  - LeftZone
-  - Fly
-  - Tongue
-  - Mouth
-  - Scoreboard
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -21,10 +11,10 @@ TagManager:
   - 
   - Water
   - UI
-  - Enemy
-  - Player
-  - Fly
-  - Bomb
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
