@@ -15,6 +15,7 @@ TagManager:
   - Mouth
   - Scoreboard
   - SpawnLocation
+  - Timer
   layers:
   - Default
   - TransparentFX

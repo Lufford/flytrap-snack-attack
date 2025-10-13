@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -20,14 +21,14 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        SceneManager.sceneLoaded += onSceneLoad;
+        SceneManager.sceneLoaded += OnSceneLoad;
     }
     private void OnDestroy()
     {
-        SceneManager.sceneLoaded -= onSceneLoad;
+        SceneManager.sceneLoaded -= OnSceneLoad;
     }
 
-    void onSceneLoad(Scene scene, LoadSceneMode mode)
+    void OnSceneLoad(Scene scene, LoadSceneMode mode)
     {
         Debug.Log(scene.name);
         Debug.Log(mode.ToString());
@@ -39,7 +40,11 @@ public class GameManager : MonoBehaviour
         else
         {
             gameOver = false;
+
+            StartCoroutine(FindScoreBoard());
+            StartCoroutine(FindTimer());
         }
+        level = scene.buildIndex;
     }
 
 
@@ -53,18 +58,24 @@ public class GameManager : MonoBehaviour
 
     //Scoreboard
     private GameObject scoreboard;
-
     [SerializeField] private int score = 0;
+
+    //Timer
+    private GameObject timer;
+    [SerializeField] private float time = 120f;
 
     private float spawnCooldown = 3f;
     private float spawnTimer = 0;
     private float[] spawnTimes =  {3f,10f,12f};
-    private bool gameOver = false;
     private float flySpawnCooldown = 1f;
     private float flySpawnTimer = 0;
+    private bool gameOver = false;
+    private bool levelTransitioning = false;
+    private int level = 0;
+
     private void Start()
     {
-        
+        Debug.Log(level);
     }
 
     private void Update()
@@ -84,6 +95,16 @@ public class GameManager : MonoBehaviour
             SpawnFly();
             flySpawnTimer = 0f;
         }
+
+        if (!gameOver && timer != null && !levelTransitioning)
+        {
+            UpdateTimer();
+        }
+
+        if (time <= 0f && !levelTransitioning && !gameOver)
+        {
+            LevelWon();
+        }
     }
 
     public void SetGameOver()
@@ -93,17 +114,51 @@ public class GameManager : MonoBehaviour
         StartCoroutine(FindScoreBoard());
     }
 
-    public void startGame()
+    public void StartGame()
     {
         gameOver = false;
         score = 0;
         StartCoroutine(FindScoreBoard());
+        StartCoroutine(FindTimer());
+    }
+
+    //allows you to change the level
+    public void LevelWon()
+    {
+        levelTransitioning = true;
+        level++;
+        //probably need something to become active here to show how well you did in each level before it starts the next one
+
+        //allows you to determine the timer for each level, and other things you may want to change in between
+        switch (level)
+        {
+            case 1:
+                time = 120f;
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+        }
+
+        SceneManager.LoadScene(level);
+        levelTransitioning = false;
+
+        //assuming we don't have these set as don't destroy on load, we will need to find them each new level
+        //as the score is stored in the gamemanager this won't get rid of your score between levels
+        StartCoroutine(FindScoreBoard());
+        StartCoroutine(FindTimer());
     }
 
     public void updateScore(int score)
     {
         this.score += score;
         scoreboard.GetComponent<TMP_Text>().text = "Score: " + this.score.ToString();
+    }
+    void UpdateTimer()
+    {
+        time -= Time.deltaTime;
+        timer.GetComponent<TMP_Text>().text = TimeSpan.FromSeconds(time).ToString(@"m\:ss");
     }
 
     void SpawnEnemy(GameObject prefab)
@@ -124,5 +179,11 @@ public class GameManager : MonoBehaviour
         {
             scoreboard.GetComponent<TMP_Text>().text = "Final Score " + score.ToString();
         }
+    }
+
+    private IEnumerator FindTimer()
+    {
+        yield return new WaitForSeconds(0.1f);
+        timer = GameObject.FindGameObjectWithTag("Timer");
     }
 }

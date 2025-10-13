@@ -6,7 +6,7 @@ public class TitleScreenMenu : MonoBehaviour
     //Send to Game
     public void StartGame()
     {
-        GameManager.Instance.startGame();
+        GameManager.Instance.StartGame();
         SceneManager.LoadScene("FirstLevel");
     }
 
