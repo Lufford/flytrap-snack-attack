@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour
 
         if (time <= 0f && !levelTransitioning && !gameOver)
         {
-            LevelWon();
+            StartCoroutine(LevelChange());
         }
     }
 
@@ -118,34 +118,6 @@ public class GameManager : MonoBehaviour
     {
         gameOver = false;
         score = 0;
-        StartCoroutine(FindScoreBoard());
-        StartCoroutine(FindTimer());
-    }
-
-    //allows you to change the level
-    public void LevelWon()
-    {
-        levelTransitioning = true;
-        level++;
-        //probably need something to become active here to show how well you did in each level before it starts the next one
-
-        //allows you to determine the timer for each level, and other things you may want to change in between
-        switch (level)
-        {
-            case 1:
-                time = 120f;
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-        }
-
-        SceneManager.LoadScene(level);
-        levelTransitioning = false;
-
-        //assuming we don't have these set as don't destroy on load, we will need to find them each new level
-        //as the score is stored in the gamemanager this won't get rid of your score between levels
         StartCoroutine(FindScoreBoard());
         StartCoroutine(FindTimer());
     }
@@ -169,6 +141,36 @@ public class GameManager : MonoBehaviour
     void SpawnFly()
     {
         Instantiate(flyPrefabs, new Vector3(Random.Range(-8,8),5.7f,0), Quaternion.identity);
+    }
+
+    //allows you to change the level
+    private IEnumerator LevelChange()
+    {
+        levelTransitioning = true;
+        level++;
+        //probably need something to become active here to show how well you did in each level before it starts the next one
+
+        //allows you to determine the timer for each level, and other things you may want to change in between
+        switch (level)
+        {
+            case 1:
+                time = 120f;
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+        }
+
+        yield return new WaitForSeconds(5f);
+
+        SceneManager.LoadScene(level);
+        levelTransitioning = false;
+
+        //assuming we don't have these set as don't destroy on load, we will need to find them each new level
+        //as the score is stored in the gamemanager this won't get rid of your score between levels
+        StartCoroutine(FindScoreBoard());
+        StartCoroutine(FindTimer());
     }
 
     private IEnumerator FindScoreBoard()
