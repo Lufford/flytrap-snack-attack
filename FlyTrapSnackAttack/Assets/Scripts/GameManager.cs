@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -59,6 +60,7 @@ public class GameManager : MonoBehaviour
     //Scoreboard
     private GameObject scoreboard;
     [SerializeField] private int score = 0;
+    private Dictionary<int, int> levelScore = new Dictionary<int, int>();
 
     //Timer
     private GameObject timer;
@@ -72,6 +74,7 @@ public class GameManager : MonoBehaviour
     private bool gameOver = false;
     private bool levelTransitioning = false;
     private int level = 0;
+
 
     private void Start()
     {
@@ -109,6 +112,7 @@ public class GameManager : MonoBehaviour
 
     public void SetGameOver()
     {
+        levelScore[level] = score;
         gameOver = true;
         SceneManager.LoadScene("GameOverScreen");
         StartCoroutine(FindScoreBoard());
@@ -118,6 +122,7 @@ public class GameManager : MonoBehaviour
     {
         gameOver = false;
         score = 0;
+        time = 60f;
         StartCoroutine(FindScoreBoard());
         StartCoroutine(FindTimer());
     }
@@ -125,7 +130,11 @@ public class GameManager : MonoBehaviour
     public void updateScore(int score)
     {
         this.score += score;
-        scoreboard.GetComponent<TMP_Text>().text = "Score: " + this.score.ToString();
+
+        if (scoreboard != null)
+        {
+            scoreboard.GetComponent<TMP_Text>().text = "Score: " + this.score.ToString();
+        }
     }
     void UpdateTimer()
     {
@@ -147,25 +156,35 @@ public class GameManager : MonoBehaviour
     private IEnumerator LevelChange()
     {
         levelTransitioning = true;
+        levelScore[level] = score; 
+
+        Time.timeScale = 0f;
+        yield return new WaitForSecondsRealtime(5f);
+        Time.timeScale = 1f;
+
         level++;
-        //probably need something to become active here to show how well you did in each level before it starts the next one
+        score = 0;
 
         //allows you to determine the timer for each level, and other things you may want to change in between
         switch (level)
         {
             case 1:
-                time = 120f;
+                time = 60f;
                 break;
             case 2:
+                time = 90f;
                 break;
             case 3:
+                time = 120f;
                 break;
+            default:
+                SetGameOver();
+                yield break;
         }
-
-        yield return new WaitForSeconds(5f);
 
         SceneManager.LoadScene(level);
         levelTransitioning = false;
+
 
         //assuming we don't have these set as don't destroy on load, we will need to find them each new level
         //as the score is stored in the gamemanager this won't get rid of your score between levels
@@ -177,9 +196,20 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         scoreboard = GameObject.FindGameObjectWithTag("Scoreboard");
+        if (scoreboard == null)
+        {
+            yield break;
+        }
+
         if (gameOver)
         {
-            scoreboard.GetComponent<TMP_Text>().text = "Final Score " + score.ToString();
+            string result = "Final Scores:\n";
+            for (int i = 1; i <= 3; i++)
+            {
+                if (levelScore.ContainsKey(i))
+                    result += $"Level {i}: {levelScore[i]}\n";
+            }
+            scoreboard.GetComponent<TMP_Text>().text = result;
         }
     }
 
@@ -188,4 +218,5 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         timer = GameObject.FindGameObjectWithTag("Timer");
     }
+
 }
