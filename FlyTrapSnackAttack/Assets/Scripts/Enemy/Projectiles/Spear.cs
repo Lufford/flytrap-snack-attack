@@ -62,6 +62,7 @@ public class Spear : MonoBehaviour
         if (numSpears == 0)
         {
             hasSpear = false;
+            GetComponent<SpriteRenderer>().enabled = false;
         }
     }
 }

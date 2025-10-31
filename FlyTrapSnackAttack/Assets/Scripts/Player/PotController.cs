@@ -3,6 +3,7 @@ public class PotController : MonoBehaviour
 {   
     [SerializeField] float speed;
     Rigidbody2D rb;
+    private Animator animator;
     private SpriteRenderer mouthSprite;
     private Vector3 movement = Vector3.zero;
     private bool canMove = true;
@@ -14,12 +15,14 @@ public class PotController : MonoBehaviour
     private float cooldownTimer = 2f;
     [SerializeField] private GameObject tongue;
     [SerializeField] private GameObject mouth;
+    [SerializeField] private GameObject idleMouth;
     [SerializeField] private Transform rotationPoint;
     void Awake()=> cam = Camera.main;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         mouthSprite = mouth.GetComponent<SpriteRenderer>();
     }
 
@@ -42,13 +45,22 @@ public class PotController : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && cooldownTimer >= 2f)
         {
             canMove = false;
-            Instantiate(tongue, mouth.transform.position , rotationPoint.rotation);
+            idleMouth.SetActive(false);
+            Instantiate(tongue, mouth.transform.position, rotationPoint.rotation);
             cooldownTimer = 0;
             moveTimer = 0;
         }
         cooldownTimer += Time.deltaTime;
         moveTimer += Time.deltaTime;
-        if (moveTimer > 0.5f) canMove = true;
+        if (moveTimer > 0.5f)
+        {
+            canMove = true;
+            idleMouth.SetActive(true);
+        }
+
+        //Controls if its animating based on movement
+        if (movement.x > 0f || movement.x  < 0f) { animator.speed = 1; }
+        else { animator.speed = 0; }
     }
 
     private void FixedUpdate()

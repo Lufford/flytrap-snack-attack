@@ -10,14 +10,12 @@ public class BeetleBombDropped : MonoBehaviour
     [SerializeField] public float speed;
     [SerializeField] private GameObject PoisonZone; //prefab?
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.linearVelocity = Vector2.down * speed;
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -35,8 +33,6 @@ public class BeetleBombDropped : MonoBehaviour
 
             //destroy after bomb is instantiated
             Destroy(gameObject);
-
-            
         }
     }
 }

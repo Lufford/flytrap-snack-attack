@@ -4,7 +4,7 @@ using Random = UnityEngine.Random;
 
 public class BeetleBomber : MonoBehaviour
 {
-
+    private Animator animator;
 
     private bool hasBomb = true;
     private float trackCooldown;
@@ -16,6 +16,7 @@ public class BeetleBomber : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        animator = GetComponent<Animator>();
         bombNum = 1; //only one bomb can be dropped
         trackCooldown = Random.Range(2f, 15f); //random cooldown between 2 and 5 seconds
     }
@@ -41,6 +42,7 @@ public class BeetleBomber : MonoBehaviour
         //if it has a bomb and the timer is over 2 seconds, drop the bomb
         if (hasBomb && timer >= trackCooldown)
         {
+            animator.SetBool("HasBomb", false);
             timer = 0;
             Instantiate(BeetleBomb, transform.position, Quaternion.identity);
             bombNum--;

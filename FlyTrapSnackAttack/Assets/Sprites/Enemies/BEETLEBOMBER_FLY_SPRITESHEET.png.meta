@@ -1,0 +1,319 @@
+fileFormatVersion: 2
+guid: ed28d1e0e278b0c4b911a04068dd0037
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2611703690384256651
+    second: BEETLEBOMBER_FLY_SPRITESHEET_0
+  - first:
+      213: 7463172280658617087
+    second: BEETLEBOMBER_FLY_SPRITESHEET_1
+  - first:
+      213: 430281644411066611
+    second: BEETLEBOMBER_FLY_SPRITESHEET_2
+  - first:
+      213: -8649962100168696752
+    second: BEETLEBOMBER_FLY_SPRITESHEET_3
+  - first:
+      213: -2982554545811129575
+    second: BEETLEBOMBER_FLY_SPRITESHEET_4
+  - first:
+      213: 1368862299180791349
+    second: BEETLEBOMBER_FLY_SPRITESHEET_5
+  - first:
+      213: -7612017043553215848
+    second: BEETLEBOMBER_FLY_SPRITESHEET_6
+  - first:
+      213: 218137681492948090
+    second: BEETLEBOMBER_FLY_SPRITESHEET_7
+  - first:
+      213: -4961456180543424949
+    second: BEETLEBOMBER_FLY_SPRITESHEET_8
+  - first:
+      213: 5668998331795186592
+    second: BEETLEBOMBER_FLY_SPRITESHEET_9
+  - first:
+      213: 6554597934894402358
+    second: BEETLEBOMBER_FLY_SPRITESHEET_10
+  - first:
+      213: -8303445778470963321
+    second: BEETLEBOMBER_FLY_SPRITESHEET_11
+  - first:
+      213: 377150314240193754
+    second: BEETLEBOMBER_FLY_SPRITESHEET_12
+  - first:
+      213: 5292819679979594484
+    second: BEETLEBOMBER_FLY_SPRITESHEET_13
+  - first:
+      213: 6761361471217661350
+    second: BEETLEBOMBER_FLY_SPRITESHEET_14
+  - first:
+      213: -8530534495547698199
+    second: BEETLEBOMBER_FLY_SPRITESHEET_15
+  - first:
+      213: 1019094683759431464
+    second: BEETLEBOMBER_FLY_SPRITESHEET_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BEETLEBOMBER_FLY_SPRITESHEET_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2047
+        width: 1647
+        height: 2047
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8e2ee34ba2ae3420800000000000000
+      internalID: 2611703690384256651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BEETLEBOMBER_FLY_SPRITESHEET_1
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 2047
+        width: 1647
+        height: 2047
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff2e23ec5a3829760800000000000000
+      internalID: 7463172280658617087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BEETLEBOMBER_FLY_SPRITESHEET_2
+      rect:
+        serializedVersion: 2
+        x: 3294
+        y: 2047
+        width: 1647
+        height: 2047
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f81e7830eaa8f500800000000000000
+      internalID: 430281644411066611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BEETLEBOMBER_FLY_SPRITESHEET_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1647
+        height: 2047
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05c5ad2ac4925f780800000000000000
+      internalID: -8649962100168696752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BEETLEBOMBER_FLY_SPRITESHEET_4
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 0
+        width: 1647
+        height: 2047
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91b73bd5176db96d0800000000000000
+      internalID: -2982554545811129575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BEETLEBOMBER_FLY_SPRITESHEET_5
+      rect:
+        serializedVersion: 2
+        x: 3294
+        y: 0
+        width: 1647
+        height: 2047
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5367811320d2ff210800000000000000
+      internalID: 1368862299180791349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: edfbcad4782caa0469fa4b6e60874e96
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      BEETLEBOMBER_FLY_SPRITESHEET_0: 2611703690384256651
+      BEETLEBOMBER_FLY_SPRITESHEET_1: 7463172280658617087
+      BEETLEBOMBER_FLY_SPRITESHEET_2: 430281644411066611
+      BEETLEBOMBER_FLY_SPRITESHEET_3: -8649962100168696752
+      BEETLEBOMBER_FLY_SPRITESHEET_4: -2982554545811129575
+      BEETLEBOMBER_FLY_SPRITESHEET_5: 1368862299180791349
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

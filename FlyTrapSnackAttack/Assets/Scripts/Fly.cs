@@ -11,7 +11,7 @@ public class Fly : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Tongue"))
+        if (other.gameObject.CompareTag("Mouth"))
         {
             Destroy(gameObject);
             Energy energy = FindFirstObjectByType<Energy>();
