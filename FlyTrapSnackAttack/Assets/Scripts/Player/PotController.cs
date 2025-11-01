@@ -17,10 +17,14 @@ public class PotController : MonoBehaviour
     [SerializeField] private GameObject mouth;
     [SerializeField] private GameObject idleMouth;
     [SerializeField] private Transform rotationPoint;
+    
+    private AudioSource audioSource;
+    public AudioClip audioClip;
     void Awake()=> cam = Camera.main;
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         mouthSprite = mouth.GetComponent<SpriteRenderer>();
@@ -44,6 +48,7 @@ public class PotController : MonoBehaviour
         
         if (Input.GetMouseButtonDown(0) && cooldownTimer >= 2f)
         {
+            audioSource.PlayOneShot(audioClip, 1f);
             canMove = false;
             idleMouth.SetActive(false);
             Instantiate(tongue, mouth.transform.position, rotationPoint.rotation);

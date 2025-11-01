@@ -31,8 +31,6 @@ public class GameManager : MonoBehaviour
 
     void OnSceneLoad(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log(scene.name);
-        Debug.Log(mode.ToString());
         spawnLocations = GameObject.FindGameObjectsWithTag("SpawnLocation");
         if (scene.name.Equals("TitleScreen") || scene.name.Equals("GameOverScreen"))
         {
@@ -41,7 +39,6 @@ public class GameManager : MonoBehaviour
         else
         {
             gameOver = false;
-
             StartCoroutine(FindScoreBoard());
             StartCoroutine(FindTimer());
         }

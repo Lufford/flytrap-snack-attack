@@ -8,15 +8,21 @@ public class SpearThrown : MonoBehaviour
     private Vector2 moveDirection;
 
     [SerializeField] private float speed;
+    [SerializeField] private AudioClip throwSound;
+    private AudioSource audioSource;
+    
 
     public float damageAmount = 20f;
+
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         //same thing as the other script but only grabs direction towards the play on spawn so it doesn't track 
         target = GameObject.FindGameObjectWithTag("Player").transform;
         moveDirection= (target.position - transform.position).normalized;
         transform.up = moveDirection;
+        audioSource.PlayOneShot(throwSound);
     }
 
     // Update is called once per frame

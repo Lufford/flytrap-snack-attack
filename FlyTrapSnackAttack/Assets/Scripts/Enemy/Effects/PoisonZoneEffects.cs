@@ -5,10 +5,14 @@ public class PoisonZoneEffects : MonoBehaviour
 
     private float duration;
     public float damageAmount = 10f;
+    [SerializeField] private AudioClip explodeSound;
+    private AudioSource audioSource;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.PlayOneShot(explodeSound);
 
         //random duration for the poison/stink zone to last on table
         duration = Random.Range(3f, 6f);
