@@ -19,7 +19,7 @@ public class Fly : MonoBehaviour
             {
                 energy.Heal(4);
             }
-            GameManager.Instance.updateScore(5);
+            GameManager.Instance.UpdateScore(5);
         }
     }
 }

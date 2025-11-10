@@ -1,8 +1,4 @@
-using System;
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.InputSystem.Controls;
 
 public class WaspThrowing : MonoBehaviour
 {
@@ -19,6 +15,5 @@ public class WaspThrowing : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
     }
 }

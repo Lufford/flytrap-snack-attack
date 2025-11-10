@@ -1,3 +1,4 @@
+using Mono.Cecil;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -63,6 +64,9 @@ public class GameManager : MonoBehaviour
     private GameObject timer;
     [SerializeField] private float time = 120f;
 
+    //Transition Screen
+    private GameObject levelTransition;
+
     private float spawnCooldown = 3f;
     private float spawnTimer = 0;
     private float[] spawnTimes =  {3f,10f,12f};
@@ -124,7 +128,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(FindTimer());
     }
 
-    public void updateScore(int score)
+    public void UpdateScore(int score)
     {
         this.score += score;
 
@@ -133,6 +137,12 @@ public class GameManager : MonoBehaviour
             scoreboard.GetComponent<TMP_Text>().text = "Score: " + this.score.ToString();
         }
     }
+
+    public int GetScore()
+    {
+        return score;
+    }
+
     void UpdateTimer()
     {
         time -= Time.deltaTime;
@@ -156,6 +166,14 @@ public class GameManager : MonoBehaviour
         levelScore[level] = score; 
 
         Time.timeScale = 0f;
+        try
+        {
+        levelTransition = GameObject.FindGameObjectWithTag("LevelTransition");
+        levelTransition.GetComponent<Canvas>().enabled = true;
+        } catch
+        {
+            levelTransition = null;
+        }
         yield return new WaitForSecondsRealtime(5f);
         Time.timeScale = 1f;
 
@@ -206,6 +224,8 @@ public class GameManager : MonoBehaviour
                 if (levelScore.ContainsKey(i))
                     result += $"Level {i}: {levelScore[i]}\n";
             }
+            int finalScore = levelScore[1] + levelScore[2] + levelScore[3];
+            result += "Total Score: " + finalScore;
             scoreboard.GetComponent<TMP_Text>().text = result;
         }
     }

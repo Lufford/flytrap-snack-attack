@@ -54,6 +54,7 @@ public class BeetleBomber : MonoBehaviour
     {
         if (other.gameObject.CompareTag("LeftZone") || other.gameObject.CompareTag("RightZone"))
         {
+            Debug.Log("I should die");
             Destroy(gameObject);
         }
     }

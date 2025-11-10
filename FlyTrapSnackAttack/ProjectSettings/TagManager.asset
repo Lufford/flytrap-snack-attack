@@ -16,6 +16,7 @@ TagManager:
   - Scoreboard
   - SpawnLocation
   - Timer
+  - LevelTransition
   layers:
   - Default
   - TransparentFX
