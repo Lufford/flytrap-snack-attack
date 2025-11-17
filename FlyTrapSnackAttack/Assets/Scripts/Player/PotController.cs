@@ -12,7 +12,7 @@ public class PotController : MonoBehaviour
     //Mouth stuff
     private Camera cam;
     private Vector3 mousePos;
-    private float cooldownTimer = 2f;
+    private float cooldownTimer = 1f;
     [SerializeField] private GameObject tongue;
     [SerializeField] private GameObject mouth;
     [SerializeField] private GameObject idleMouth;
@@ -44,9 +44,9 @@ public class PotController : MonoBehaviour
             float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
             rotationPoint.rotation = Quaternion.Euler(0f, 0f, rotZ);
         }
-        mouthSprite.color = cooldownTimer>2f ?  new Color(0, 1, 0, 1) : new Color(1, 0, 0, 1);
+        mouthSprite.color = cooldownTimer>1f ?  new Color(0, 1, 0, 1) : new Color(1, 0, 0, 1);
         
-        if (Input.GetMouseButtonDown(0) && cooldownTimer >= 2f)
+        if (Input.GetMouseButtonDown(0) && cooldownTimer >= 1f)
         {
             audioSource.PlayOneShot(audioClip, 1f);
             canMove = false;

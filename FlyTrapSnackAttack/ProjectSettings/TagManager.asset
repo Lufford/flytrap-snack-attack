@@ -17,6 +17,7 @@ TagManager:
   - SpawnLocation
   - Timer
   - LevelTransition
+  - travelPoint
   layers:
   - Default
   - TransparentFX

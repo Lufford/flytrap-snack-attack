@@ -10,6 +10,7 @@ public class BeetleBomber : MonoBehaviour
     private float trackCooldown;
     private int bombNum;
     private float timer;
+    private int direction = 1;
     [SerializeField] private GameObject BeetleBomb; //prefab?
 
 
@@ -24,7 +25,7 @@ public class BeetleBomber : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(1 * Time.deltaTime, //x value - horizontal speed
+        transform.Translate(direction * Time.deltaTime, //x value - horizontal speed
         0.002f * Mathf.Sin(Time.time * 1), //y value - vertical speed
         0); // z speed
         
@@ -52,6 +53,16 @@ public class BeetleBomber : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.gameObject.tag == "travelPoint")
+        {
+            int[] horizontals = {-1, 1};
+            int dir = horizontals[Random.Range(0,2)];
+            Vector3 scale = transform.localScale;
+            scale.x *= dir;
+            transform.localScale = scale;
+            direction = dir;
+        }
+        
         if (other.gameObject.CompareTag("LeftZone") || other.gameObject.CompareTag("RightZone"))
         {
             Debug.Log("I should die");
