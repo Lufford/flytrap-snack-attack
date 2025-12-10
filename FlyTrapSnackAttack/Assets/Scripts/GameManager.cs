@@ -1,4 +1,3 @@
-using Mono.Cecil;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -123,6 +122,7 @@ public class GameManager : MonoBehaviour
     {
         gameOver = false;
         score = 0;
+        levelScore.Clear();
         time = 60f;
         StartCoroutine(FindScoreBoard());
         StartCoroutine(FindTimer());
@@ -221,7 +221,7 @@ public class GameManager : MonoBehaviour
             string result = "Final Scores:\n";
             for (int i = 1; i <= 3; i++)
             {
-                if (levelScore.ContainsKey(i))
+                if (levelScore.ContainsKey(i) && levelScore[i] > 0)
                     result += $"Level {i}: {levelScore[i]}\n";
             }
             int finalScore = levelScore[1] + levelScore[2] + levelScore[3];
